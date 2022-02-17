@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href='/css/homepage.css'>
+        <link rel="stylesheet" type="text/css" href='/static/css/homepage.css'>
     </head>
     <body>
         <h2>Responsive Table</h2>
@@ -8,19 +8,19 @@
     <table class="fl-table">
         <thead>
         <tr>
-            <th> sr no</th>
+            <th>sr no</th>
             <th>Filename</th>
             <th>Link</th>
             
         </thead>
         <tbody>
-            {% for instance in queryset %}
+            {% for instance in files %}
             <tr>
-                <td>{{forloop.counter}}</td>
+                <td>{{instance.id}}</td>
                 
                 <td>{{instance.filename}}</td>
             
-                <td><a href="{% url 'filelink' instance.id %}">view here</a></td>
+                <td><a href="{{url_for('static',filename=instance.filepath) }}">view here</a></td>
         
             </tr>
             {% endfor %}
