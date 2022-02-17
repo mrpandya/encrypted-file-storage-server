@@ -6,7 +6,7 @@
 body{
     font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
-    background: rgb(47, 94, 37);
+    background: rgb(50, 129, 67);
 }
 h1{
     text-align: left;
@@ -24,6 +24,9 @@ h2{
     color: #2EE59D;
     padding: 30px 0;
 }
+.centered {
+    text-align: center;
+}
 
 button {
     padding: 1.3em 3em;
@@ -39,6 +42,7 @@ button {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    left:50%;
    }
    
    button:hover {
