@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href='/css/homepage.css'>
+    </head>
+    <body>
+        <h2>Responsive Table</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th> sr no</th>
+            <th>Filename</th>
+            <th>Link</th>
+            
+        </thead>
+        <tbody>
+            {% for instance in queryset %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                
+                <td>{{instance.filename}}</td>
+            
+                <td><a href="{% url 'filelink' instance.id %}">view here</a></td>
+        
+            </tr>
+            {% endfor %}
+        <tbody>
+    </table>
+</div>
+    </body>
+</html>
