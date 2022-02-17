@@ -1,19 +1,17 @@
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify, abort, render_template, redirect
 
 app = Flask(__name__)
 
 
 @app.route('/login', methods=['GET','POST'])
-def login():
+def login(req=None):
     if(request.method == 'POST'):
-        ...
+        print(request.form)
+        return redirect('/login')
     # GET
-    
-    return jsonify(None)
+    return render_template('login.html')
 
-# @app.route('/login', methods=['POST'])
-# def login(request):
-#     return jsonify({request.methods:request})
+
 
 
 if __name__ == '__main__':
